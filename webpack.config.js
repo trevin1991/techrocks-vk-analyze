@@ -27,8 +27,11 @@ module.exports = {
 
             Main: "app/components/Main.jsx",
             Nav: "app/components/Nav.jsx",
+            UserInfo: "app/components/UserInfo.jsx",
             DogsChecker: "app/components/DogsChecker.jsx",
-            DogsCollector: "app/components/DogsCollector.jsx"
+            DogsCollector: "app/components/DogsCollector.jsx",
+
+            vkapi: "app/api/vkAPI.jsx"
         },
         extensions: ["", ".js", ".jsx"]
     },
