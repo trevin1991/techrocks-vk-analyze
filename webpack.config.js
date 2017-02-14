@@ -30,6 +30,8 @@ module.exports = {
             UserInfo: "app/components/UserInfo.jsx",
             DogsChecker: "app/components/DogsChecker.jsx",
             DogsCollector: "app/components/DogsCollector.jsx",
+            About: "app/components/About.jsx",
+            GroupCard: "app/components/GroupCard.jsx",
 
             vkapi: "app/api/vkAPI.jsx"
         },

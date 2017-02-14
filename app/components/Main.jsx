@@ -2,29 +2,36 @@ import React from "react";
 import Nav from "Nav";
 import UserInfo from "UserInfo";
 
-import vkAPI from "vkapi";
+import vkapi from "vkapi";
 
 class Main extends React.Component {
     constructor() {
         super();
+        this.state = {
+            _loggedIn: false
+        }
     }
 
-    getUserInfo() {
-        vkAPI.login().then(function(result) {
-            console.log(result);
-            vkAPI.getUserInfo().then(function(userInfo) {
-                console.log(userInfo);
-            })
+    componentDidMount() {
+        let self = this;
+        vkapi.getUserInfo().then((result) => {
+            self.setState({
+                userInfo: {
+                    firstName: result.first_name,
+                    lastName: result.last_name,
+                    photoSrc: result.crop_photo.photo.src_small
+                }
+            });
         });
     }
 
     render() {
-        this.getUserInfo();
         return (
             <div>
-                <Nav/>
-                <UserInfo/>
-                <div>{ this.props.children }</div>
+                <Nav { ...this.state.userInfo }/>
+                <div className="row">
+                    <div className="small-12 columns">{ this.props.children }</div>
+                </div>
             </div>
         );
     }

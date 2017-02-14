@@ -5,6 +5,7 @@ import { Route, Router, IndexRoute, hashHistory } from "react-router";
 import Main from "Main";
 import DogsChecker from "DogsChecker";
 import DogsCollector from "DogsCollector";
+import About from "About";
 
 // Load foundation
 require("style!css!foundation-sites/dist/css/foundation.min.css");
@@ -18,6 +19,7 @@ ReactDOM.render(
         <Route path="/" component={ Main }>
             <IndexRoute component={ DogsChecker }/>
             <Route path="dogs-collector" component={ DogsCollector }/>
+            <Route path="about" component={ About }/>
         </Route>
     </Router>,
     document.getElementById("app")
